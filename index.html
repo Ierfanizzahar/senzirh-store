@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Game - Senzith Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+   <div class="header">
+    <a href="#" class="logo" id="logoHome">
+        <i class="fas fa-bolt"></i> 
+        <span class="brand-name">Senzith</span> 
+        <span class="brand-store">Store</span>
+    </a>
+    <div class="header-right">
+        <i class="fas fa-shield-alt"></i> Secure Payment
+    </div>
+</div>
+<!-- BANNER CAROUSEL -->
+<div class="banner-carousel" id="bannerCarousel">
+    <div class="banner-track" id="bannerTrack">
+        <!-- Gambar auto-generated oleh JavaScript -->
+    </div>
+    <button class="banner-nav banner-prev" id="bannerPrev">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="banner-nav banner-next" id="bannerNext">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="banner-dots" id="bannerDots"></div>
+</div>
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar">
+        <div class="progress-step">
+            <div class="step-circle active" id="step1Circle">1</div>
+            <div class="step-label active" id="step1Label">Pilih Game</div>
+        </div>
+        <div class="step-line" id="line1"></div>
+        <div class="progress-step">
+            <div class="step-circle" id="step2Circle">2</div>
+            <div class="step-label" id="step2Label">Pilih Kategori</div>
+        </div>
+        <div class="step-line" id="line2"></div>
+        <div class="progress-step">
+            <div class="step-circle" id="step3Circle">3</div>
+            <div class="step-label" id="step3Label">Checkout</div>
+        </div>
+        <div class="step-line" id="line3"></div>
+        <div class="progress-step">
+            <div class="step-circle" id="step4Circle">4</div>
+            <div class="step-label" id="step4Label">Selesai</div>
+        </div>
+    </div>
+
+    <!-- PAGE 1: PILIH GAME -->
+    <div class="page active" id="page1">
+        <div class="page-title">Pilih Game</div>
+        <div class="page-subtitle">Sila pilih game yang anda ingin top up.</div>
+        <div class="game-grid" id="gameGrid">
+            <!-- Auto-generated dari games.json -->
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-nav btn-back" disabled>
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button class="btn-nav btn-next" id="btnNext1" disabled>
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PILIH KATEGORI -->
+    <div class="page" id="page2">
+        <div class="page-title">Pilih Kategori</div>
+        <div class="page-subtitle" id="page2Subtitle">Sila pilih server.</div>
+        <div class="category-grid" id="categoryGrid"></div>
+        <div class="nav-buttons">
+            <button class="btn-nav btn-back" id="btnBack2">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button class="btn-nav btn-next" id="btnNext2" disabled>
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 3: CHECKOUT -->
+    <div class="page" id="page3">
+        <div class="page-title">Checkout</div>
+        <div class="page-subtitle" id="page3Subtitle">Isi data.</div>
+
+        <div class="checkout-layout">
+            <div class="left-panel">
+                <div class="info-card">
+                    <div class="header-flex">
+                        <div class="icon" id="checkoutGameIcon">💎</div>
+                        <div>
+                            <h3 id="checkoutGameName">Game</h3>
+                            <div class="sub" id="checkoutCategoryName">Kategori</div>
+                        </div>
+                    </div>
+                    <p>Top up dengan pantas dan selamat.</p>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="step-title"><i class="fas fa-user"></i> Fill Data</div>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="User ID" id="inputUserId">
+                    <input type="text" class="input-field" placeholder="Server ID" id="inputServerId">
+                </div>
+
+                <div class="step-title"><i class="fas fa-gem"></i> Choose Diamonds</div>
+                <div class="diamond-grid" id="diamondGrid"></div>
+
+                <div class="step-title"><i class="fas fa-credit-card"></i> Payment</div>
+                <div class="payment-list" id="paymentList">
+    <!-- WhatsApp Direct — AKTIF -->
+    <div class="payment-item" data-method="WhatsApp" data-fee="0">
+        <div class="payment-left">
+            <div class="payment-icon"><i class="fab fa-whatsapp" style="color:#25D366;"></i></div>
+            <div>
+                <div class="payment-name">WhatsApp Direct</div>
+                <div class="payment-fee">Order via WhatsApp (Paling Laju)</div>
+            </div>
+        </div>
+        <i class="fas fa-check-circle" style="color:#3b82f6; display:none;"></i>
+    </div>
+
+    <!-- QRIS — MAINTENANCE -->
+    <div class="payment-item disabled" data-method="QRIS" data-fee="0">
+        <div class="payment-left">
+            <div class="payment-icon"><i class="fas fa-qrcode"></i></div>
+            <div>
+                <div class="payment-name">QRIS</div>
+                <div class="payment-fee">🚧 Under Maintenance</div>
+            </div>
+        </div>
+        <span class="maintenance-badge">MAINTENANCE</span>
+    </div>
+
+    <!-- E-Wallet — MAINTENANCE -->
+    <div class="payment-item disabled" data-method="E-Wallet" data-fee="1500">
+        <div class="payment-left">
+            <div class="payment-icon"><i class="fas fa-wallet"></i></div>
+            <div>
+                <div class="payment-name">E-Wallet</div>
+                <div class="payment-fee">🚧 Under Maintenance</div>
+            </div>
+        </div>
+        <span class="maintenance-badge">MAINTENANCE</span>
+    </div>
+
+    <!-- Bank Transfer — MAINTENANCE -->
+    <div class="payment-item disabled" data-method="Bank" data-fee="2000">
+        <div class="payment-left">
+            <div class="payment-icon"><i class="fas fa-university"></i></div>
+            <div>
+                <div class="payment-name">Bank Transfer</div>
+                <div class="payment-fee">🚧 Under Maintenance</div>
+            </div>
+        </div>
+        <span class="maintenance-badge">MAINTENANCE</span>
+    </div>
+</div>
+
+            <div class="step-title"><i class="fas fa-envelope"></i> Contact</div>
+            <div class="contact-row">
+                <input type="email" class="input-field" placeholder="Email" id="inputEmail">
+                <input type="text" class="input-field" placeholder="No. WhatsApp" id="inputWhatsapp">
+            </div>
+
+            <div class="summary-box">
+                <div class="row"><span>Total Diamond</span><span id="summaryDiamond">12 Diamonds</span></div>
+                <div class="row"><span>Biaya Admin</span><span id="summaryFee">Rp 0</span></div>
+                <div class="row total"><span>Total Bayar</span><span id="summaryPrice">RM 3.50</span></div>
+            </div>
+
+            <button class="purchase-btn" id="purchaseBtn">
+                <i class="fas fa-shopping-cart"></i> Beli Sekarang
+            </button>
+    <!-- PAGE 4: SUCCESS -->
+    <div class="page" id="page4">
+        <div class="success-card">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h2>Pesanan Berjaya!</h2>
+            <p>Diamond akan diproses sebentar lagi.</p>
+            <div class="receipt" id="receiptBox"></div>
+            <button class="purchase-btn" id="btnNewOrder">
+                <i class="fas fa-plus"></i> Buat Pesanan Baru
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Senzith Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- HEADER -->
+    <div class="admin-header">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>ADMIN PANEL</span>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn-view-site" onclick="exportJSON()" style="background: #22c55e; border: none; cursor: pointer;">
+                <i class="fas fa-download"></i> Export JSON
+            </button>
+            <a href="index.html" class="btn-view-site">
+                <i class="fas fa-external-link-alt"></i> View Site
+            </a>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" data-tab="games">
+            <i class="fas fa-gamepad"></i> Games
+        </button>
+        <button class="tab" data-tab="banners">
+            <i class="fas fa-image"></i> Banners
+        </button>
+        <button class="tab" data-tab="orders">
+            <i class="fas fa-shopping-bag"></i> Orders
+        </button>
+        <button class="tab" data-tab="settings">
+            <i class="fas fa-cog"></i> Settings
+        </button>
+    </div>
+
+    <!-- TAB: GAMES -->
+    <div class="tab-content active" id="tab-games">
+        <div class="section-header">
+            <h2>Manage Games</h2>
+            <button class="btn-primary" id="btnAddGame">
+                <i class="fas fa-plus"></i> Tambah Game
+            </button>
+        </div>
+        <div class="games-list" id="gamesList"></div>
+    </div>
+
+    <!-- TAB: BANNERS -->
+    <div class="tab-content" id="tab-banners">
+        <div class="section-header">
+            <h2>Manage Banners</h2>
+            <button class="btn-primary" id="btnAddBanner">
+                <i class="fas fa-plus"></i> Tambah Banner
+            </button>
+        </div>
+        <div class="banners-list" id="bannersList"></div>
+    </div>
+
+    <!-- TAB: ORDERS -->
+    <div class="tab-content" id="tab-orders">
+        <div class="section-header">
+            <h2>Order History</h2>
+            <button class="btn-secondary" id="btnClearOrders">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
+        </div>
+        
+        <div class="order-filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-list"></i> Semua
+            </button>
+            <button class="filter-btn" data-filter="pending">
+                <i class="fas fa-clock" style="color:#f59e0b;"></i> Pending
+            </button>
+            <button class="filter-btn" data-filter="complete">
+                <i class="fas fa-check-circle" style="color:#22c55e;"></i> Complete
+            </button>
+            <button class="filter-btn" data-filter="error">
+                <i class="fas fa-times-circle" style="color:#ef4444;"></i> Error
+            </button>
+        </div>
+        
+        <div class="orders-list" id="ordersList"></div>
+    </div>
+
+    <!-- TAB: SETTINGS -->
+    <div class="tab-content" id="tab-settings">
+        <div class="section-header">
+            <h2>Settings</h2>
+        </div>
+        <div class="settings-form">
+            <div class="form-group">
+                <label>Nama Store</label>
+                <input type="text" id="settingStoreName" placeholder="Senzith Store">
+            </div>
+            <div class="form-group">
+                <label>Nombor WhatsApp</label>
+                <input type="text" id="settingWhatsApp" placeholder="60123456789">
+            </div>
+            <div class="form-group">
+                <label>Email Support</label>
+                <input type="email" id="settingEmail" placeholder="support@senzithstore.com">
+            </div>
+            <button class="btn-primary" id="btnSaveSettings">
+                <i class="fas fa-save"></i> Simpan
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL: EDIT GAME -->
+<div class="modal" id="gameModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Edit Game</h3>
+            <button class="modal-close" id="btnCloseModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Nama Game</label>
+                <input type="text" id="gameName" placeholder="Mobile Legends">
+            </div>
+            <div class="form-group">
+                <label>Kategori (Tag)</label>
+                <input type="text" id="gameTag" placeholder="MOBA 5v5">
+            </div>
+            <div class="form-group">
+                <label>URL Gambar</label>
+                <input type="text" id="gameImg" placeholder="images/mlbb.jpg">
+            </div>
+            <div class="form-group">
+                <label>Icon (Emoji)</label>
+                <input type="text" id="gameIcon" placeholder="💎" maxlength="4">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary" id="btnCancelModal">Batal</button>
+            <button class="btn-primary" id="btnSaveGame">
+                <i class="fas fa-save"></i> Simpan
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: EDIT CATEGORY -->
+<div class="modal" id="categoryModal">
+    <div class="modal-content" style="max-width: 700px;">
+        <div class="modal-header">
+            <h3 id="categoryModalTitle">Edit Kategori</h3>
+            <button class="modal-close" id="btnCloseCategoryModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Nama Kategori</label>
+                <input type="text" id="categoryName" placeholder="MLBB Malaysia">
+            </div>
+            <div class="form-group">
+                <label>Icon (Emoji)</label>
+                <input type="text" id="categoryIcon" placeholder="🇲🇾" maxlength="4">
+            </div>
+            <div class="form-group">
+                <label>Tag/Server</label>
+                <input type="text" id="categoryTag" placeholder="Server Malaysia">
+            </div>
+
+            <div style="margin-top: 24px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="font-size: 1rem;">Diamond Packages</h4>
+                <button class="btn-primary" id="btnAddDiamond" style="padding: 8px 16px; font-size: 0.8rem;">
+                    <i class="fas fa-plus"></i> Tambah Diamond
+                </button>
+            </div>
+
+            <div id="diamondEditor" class="diamond-editor"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary" id="btnCancelCategoryModal">Batal</button>
+            <button class="btn-primary" id="btnSaveCategory">
+                <i class="fas fa-save"></i> Simpan
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: ADD BANNER -->
+<div class="modal" id="bannerModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="bannerModalTitle">Tambah Banner</h3>
+            <button class="modal-close" id="btnCloseBannerModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Upload Gambar Banner</label>
+                <input type="file" id="bannerFile" accept="image/*" 
+                    style="padding: 10px; background: #0b0e14; border: 1px solid #2d3748; border-radius: 10px; color: white; width: 100%;">
+            </div>
+            <div class="form-group">
+                <label>Preview</label>
+                <div id="bannerPreview" style="width: 100%; height: 150px; background: #0b0e14; border: 1px dashed #2d3748; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #64748b; overflow: hidden;">
+                    Belum ada gambar
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Title (Optional)</label>
+                <input type="text" id="bannerTitle" placeholder="Contoh: Promo MLBB 50%">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary" id="btnCancelBannerModal">Batal</button>
+            <button class="btn-primary" id="btnSaveBanner">
+                <i class="fas fa-save"></i> Simpan
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

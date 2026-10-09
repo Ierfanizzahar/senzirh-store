@@ -1,0 +1,1260 @@
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #0b0e14;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #151a25;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #232a38;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.logo i {
+    color: #3b82f6;
+}
+
+.header-right {
+    font-size: 0.85rem;
+    color: #8b9bb4;
+}
+
+/* BRAND COLORS */
+.brand-name {
+    color: #a855f7;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.brand-store {
+    color: #ffffff;
+}
+
+/* ==========================================
+   PROGRESS BAR
+   ========================================== */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #151a25;
+    border-radius: 16px;
+    border: 1px solid #232a38;
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: 0.3s;
+}
+
+.step-circle.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.step-circle.done {
+    background: #22c55e;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.step-label.active {
+    color: #3b82f6;
+}
+
+.step-line {
+    width: 40px;
+    height: 2px;
+    background: #1e293b;
+}
+
+.step-line.done {
+    background: #22c55e;
+}
+
+/* ==========================================
+   PAGE
+   ========================================== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.page-subtitle {
+    color: #8b9bb4;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+/* ==========================================
+   GAME GRID
+   ========================================== */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.game-card {
+    background: #151a25;
+    border: 2px solid #232a38;
+    border-radius: 16px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.game-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -10px rgba(59, 130, 246, 0.4);
+}
+
+.game-card.selected {
+    border-color: #3b82f6;
+    background: #1e293b;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.game-img-real {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: block;
+    background: #1e293b;
+}
+
+.game-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.game-tag {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+/* ==========================================
+   CATEGORY GRID
+   ========================================== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.category-card {
+    background: #151a25;
+    border: 2px solid #232a38;
+    border-radius: 14px;
+    padding: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.category-card:hover {
+    border-color: #3b82f6;
+    background: #1e293b;
+}
+
+.category-card.selected {
+    border-color: #3b82f6;
+    background: #1e293b;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.cat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.cat-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.cat-info p {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* ==========================================
+   CHECKOUT LAYOUT
+   ========================================== */
+.checkout-layout {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.left-panel {
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+}
+
+.right-panel {
+    flex: 2;
+    min-width: 450px;
+    background: #151a25;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #232a38;
+}
+
+.info-card {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 16px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.info-card .header-flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.info-card .header-flex .icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.info-card h3 {
+    font-size: 1.05rem;
+}
+
+.info-card .sub {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.info-card p {
+    color: #8b9bb4;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   STEP TITLE
+   ========================================== */
+.step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    margin-top: 20px;
+    color: #e2e8f0;
+}
+
+.step-title:first-child {
+    margin-top: 0;
+}
+
+.step-title i {
+    color: #3b82f6;
+    background: #1e293b;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   INPUT
+   ========================================== */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    flex: 1;
+    background: #0b0e14;
+    border: 1px solid #2d3748;
+    border-radius: 12px;
+    padding: 13px 15px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.input-field::placeholder {
+    color: #4a5568;
+}
+
+/* ==========================================
+   DIAMOND GRID
+   ========================================== */
+.diamond-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.diamond-item {
+    background: #0b0e14;
+    border: 2px solid #2d3748;
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.diamond-item:hover {
+    border-color: #4b5563;
+}
+
+.diamond-item.selected {
+    border-color: #3b82f6;
+    background: #1e293b;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.diamond-item .amount {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.diamond-item .price {
+    font-size: 0.7rem;
+    color: #8b9bb4;
+}
+
+.diamond-item .hot-badge {
+    position: absolute;
+    top: -8px;
+    right: 6px;
+    background: #ef4444;
+    font-size: 0.55rem;
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   PAYMENT
+   ========================================== */
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0b0e14;
+    border: 2px solid #2d3748;
+    border-radius: 12px;
+    padding: 13px 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.payment-item:hover {
+    border-color: #4b5563;
+}
+
+.payment-item.selected {
+    border-color: #3b82f6;
+    background: #1e293b;
+}
+
+.payment-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.payment-icon {
+    width: 32px;
+    height: 32px;
+    background: #1e293b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.payment-name {
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.payment-fee {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+/* ==========================================
+   CONTACT
+   ========================================== */
+.contact-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   SUMMARY
+   ========================================== */
+.summary-box {
+    background: #0b0e14;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px 0 18px;
+    border: 1px solid #2d3748;
+}
+
+.summary-box .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #8b9bb4;
+    margin-bottom: 8px;
+}
+
+.summary-box .row.total {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
+    padding-top: 10px;
+    border-top: 1px dashed #2d3748;
+}
+
+.summary-box .row.total span:last-child {
+    color: #3b82f6;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+.purchase-btn {
+    width: 100%;
+    background: #3b82f6;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.purchase-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    gap: 12px;
+}
+
+.btn-nav {
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back {
+    background: #1e293b;
+    color: #cbd5e1;
+    border: 1px solid #2d3748;
+}
+
+.btn-back:hover {
+    background: #2d3748;
+}
+
+.btn-next {
+    background: #3b82f6;
+    color: white;
+    margin-left: auto;
+}
+
+.btn-next:hover {
+    background: #2563eb;
+}
+
+.btn-next:disabled {
+    background: #1e293b;
+    color: #475569;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   SUCCESS PAGE
+   ========================================== */
+.success-card {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+    color: white;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+}
+
+.success-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.success-card p {
+    color: #8b9bb4;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.receipt {
+    background: #0b0e14;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 24px;
+    border: 1px solid #2d3748;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e293b;
+}
+
+.receipt-row:last-child {
+    border-bottom: none;
+}
+
+.receipt-row .label {
+    color: #8b9bb4;
+}
+
+.receipt-row .value {
+    font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 800px) {
+    .checkout-layout {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .info-card {
+        position: static;
+    }
+    .progress-bar {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .step-label {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .input-group, .contact-row {
+        flex-direction: column;
+    }
+    .diamond-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+/* ==========================================
+   PAYMENT MAINTENANCE
+   ========================================== */
+.payment-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #0b0e14;
+    border-color: #2d3748;
+}
+
+.payment-item.disabled:hover {
+    border-color: #2d3748;
+    background: #0b0e14;
+}
+
+.payment-item.disabled .payment-name {
+    color: #64748b;
+}
+
+.payment-item.disabled .payment-icon {
+    color: #64748b;
+}
+
+.maintenance-badge {
+    background: #f59e0b;
+    color: #0b0e14;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+/* ==========================================
+   BUTTON TIMBUL + WAVE EFFECT (CUSTOMER)
+   ========================================== */
+
+/* ==========================================
+   NEXT BUTTON - TIMBUL 3D
+   ========================================== */
+.btn-next {
+    background: #3b82f6;
+    box-shadow: 
+        0 4px 0 #1e40af,
+        0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-next:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 0 #1e40af,
+        0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-next:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 
+        0 2px 0 #1e40af,
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* RIPPLE untuk next button */
+.btn-next::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    pointer-events: none;
+}
+
+.btn-next:hover:not(:disabled)::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ==========================================
+   BACK BUTTON - TIMBUL 3D
+   ========================================== */
+.btn-back {
+    background: #1e293b;
+    border: 1px solid #2d3748;
+    box-shadow: 
+        0 3px 0 #0f172a,
+        0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-back:hover {
+    background: #2d3748;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #0f172a,
+        0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-back:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 1px 0 #0f172a,
+        0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   PURCHASE BUTTON (BELI SEKARANG) - TIMBUL
+   ========================================== */
+.purchase-btn {
+    background: #3b82f6;
+    box-shadow: 
+        0 5px 0 #1e40af,
+        0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.purchase-btn:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 0 #1e40af,
+        0 14px 25px rgba(0, 0, 0, 0.4);
+}
+
+.purchase-btn:active {
+    transform: translateY(3px);
+    box-shadow: 
+        0 2px 0 #1e40af,
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* RIPPLE untuk purchase button */
+.purchase-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.7s, height 0.7s;
+    pointer-events: none;
+}
+
+.purchase-btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+/* ==========================================
+   GAME CARD - LIFT UP + SHINE
+   ========================================== */
+.game-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+    transition: left 0.7s;
+    pointer-events: none;
+}
+
+.game-card:hover::after {
+    left: 100%;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 20px 40px -12px rgba(0, 0, 0, 0.6),
+        0 0 0 1px #3b82f6;
+}
+
+/* ==========================================
+   CATEGORY CARD - LIFT UP
+   ========================================== */
+.category-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+    transition: left 0.7s;
+    pointer-events: none;
+}
+
+.category-card:hover::after {
+    left: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 15px 30px -10px rgba(0, 0, 0, 0.5),
+        0 0 0 1px #3b82f6;
+}
+
+/* ==========================================
+   DIAMOND ITEM - LIFT & SCALE
+   ========================================== */
+.diamond-item {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.diamond-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+    pointer-events: none;
+}
+
+.diamond-item:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.diamond-item:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 8px 0 rgba(0, 0, 0, 0.2),
+        0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.diamond-item.selected {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 0 #1e40af,
+        0 0 0 1px #3b82f6;
+}
+
+/* ==========================================
+   PAYMENT ITEM - LIFT
+   ========================================== */
+.payment-item {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.payment-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+    pointer-events: none;
+}
+
+.payment-item:hover:not(.disabled)::before {
+    width: 400px;
+    height: 400px;
+}
+
+.payment-item:hover:not(.disabled) {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 6px 0 rgba(0, 0, 0, 0.3),
+        0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.payment-item.selected {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #1e40af,
+        0 0 0 1px #3b82f6;
+}
+
+/* ==========================================
+   LOGO - SUBTLE LIFT
+   ========================================== */
+.logo {
+    transition: all 0.2s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   INPUT FIELD - FOCUS LIFT
+   ========================================== */
+.input-field {
+    transition: all 0.2s ease;
+}
+
+.input-field:focus {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 0 3px rgba(59, 130, 246, 0.15),
+        0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* ==========================================
+   PROMO BUTTON - TIMBUL
+   ========================================== */
+.promo-btn {
+    background: #3b82f6;
+    box-shadow: 
+        0 3px 0 #1e40af,
+        0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #1e40af,
+        0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.promo-btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 1px 0 #1e40af,
+        0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   PROGRESS STEP - SUBTLE LIFT
+   ========================================== */
+.step-circle {
+    transition: all 0.3s ease;
+}
+
+.step-circle.active {
+    transform: scale(1.15);
+    box-shadow: 
+        0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.step-circle.done {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   INFO CARD - SUBTLE HOVER
+   ========================================== */
+.info-card {
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.4);
+}
+/* ==========================================
+   BANNER CAROUSEL
+   ========================================== */
+.banner-carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: #151a25;
+    border: 1px solid #232a38;
+}
+
+.banner-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Buttons */
+.banner-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    opacity: 0;
+}
+
+.banner-carousel:hover .banner-nav {
+    opacity: 1;
+}
+
+.banner-prev {
+    left: 16px;
+}
+
+.banner-next {
+    right: 16px;
+}
+
+.banner-nav:hover {
+    background: rgba(59, 130, 246, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Dots Indicator */
+.banner-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.banner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.banner-dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: #3b82f6;
+}
+
+/* Empty state (kalau tak ada banner) */
+.banner-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #64748b;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.banner-empty i {
+    font-size: 2rem;
+    color: #334155;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .banner-carousel {
+        height: 140px;
+    }
+    .banner-nav {
+        width: 32px;
+        height: 32px;
+        opacity: 1;
+    }
+}

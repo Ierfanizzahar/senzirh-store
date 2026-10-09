@@ -1,0 +1,1100 @@
+/* ==========================================
+   ADMIN PANEL - SENZITH STORE (CLEAN MODERN)
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ==========================================
+   BACKGROUND - SUBTLE GRADIENT (NO ANIMATION)
+   ========================================== */
+body {
+    background: #0b0e14;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.06), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.05), transparent 40%);
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER - CLEAN & SUBTLE
+   ========================================== */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: #151a25;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #232a38;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.admin-header .logo i {
+    font-size: 1.4rem;
+    color: #3b82f6;
+}
+
+.btn-view-site {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-view-site:hover {
+    background: #2563eb;
+}
+
+/* ==========================================
+   TABS - CLEAN
+   ========================================== */
+.tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+    background: #151a25;
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid #232a38;
+}
+
+.tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #8b9bb4;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.tab.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* ==========================================
+   TAB CONTENT
+   ========================================== */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.section-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ==========================================
+   BUTTONS - CLEAN
+   ========================================== */
+.btn-primary, .btn-secondary {
+    padding: 11px 22px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-secondary {
+    background: #1e293b;
+    color: #cbd5e1;
+    border: 1px solid #2d3748;
+}
+
+.btn-secondary:hover {
+    background: #2d3748;
+}
+
+.btn-primary:active, .btn-secondary:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   GAMES LIST - CLEAN CARD
+   ========================================== */
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.game-item {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    transition: 0.2s ease;
+    animation: slideUp 0.4s ease backwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.game-item:hover {
+    border-color: #3b82f6;
+    background: #1a2030;
+}
+
+.game-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #1e293b;
+    flex-shrink: 0;
+}
+
+.game-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-item-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.game-item-info p {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.game-item-info .cat-count {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.cat-tag {
+    background: #1e293b;
+    color: #8b9bb4;
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #2d3748;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cat-tag:hover {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.game-item-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.btn-edit {
+    background: #1e40af;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #2563eb;
+}
+
+.btn-delete {
+    background: #7f1d1d;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* ==========================================
+   ORDERS - CLEAN
+   ========================================== */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-item {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 12px;
+    padding: 16px;
+    transition: 0.2s ease;
+    animation: slideUp 0.4s ease backwards;
+}
+
+.order-item:hover {
+    border-color: #2d3748;
+    background: #1a2030;
+}
+
+.order-item.status-complete {
+    border-left: 3px solid #22c55e;
+}
+
+.order-item.status-error {
+    border-left: 3px solid #ef4444;
+}
+
+.order-item.status-pending {
+    border-left: 3px solid #f59e0b;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #232a38;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #3b82f6;
+    font-size: 0.85rem;
+}
+
+.order-date {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.order-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.order-body span {
+    color: #8b9bb4;
+}
+
+.order-body strong {
+    color: white;
+}
+
+/* STATUS BADGE - NO GLOW */
+.order-status {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #3a2d0a;
+    color: #fbbf24;
+    border: 1px solid #78350f;
+}
+
+.status-complete {
+    background: #0a2e1f;
+    color: #4ade80;
+    border: 1px solid #166534;
+}
+
+.status-error {
+    background: #3a0a0a;
+    color: #f87171;
+    border: 1px solid #7f1d1d;
+}
+
+/* ORDER ACTIONS */
+.order-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #232a38;
+    flex-wrap: wrap;
+}
+
+.btn-order-action {
+    padding: 7px 13px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-complete {
+    background: #0a2e1f;
+    color: #4ade80;
+    border: 1px solid #166534;
+}
+
+.btn-complete:hover {
+    background: #166534;
+    color: white;
+}
+
+.btn-error {
+    background: #3a0a0a;
+    color: #f87171;
+    border: 1px solid #7f1d1d;
+}
+
+.btn-error:hover {
+    background: #991b1b;
+    color: white;
+}
+
+.btn-delete-order {
+    background: #1e293b;
+    color: #8b9bb4;
+    border: 1px solid #2d3748;
+}
+
+.btn-delete-order:hover {
+    background: #2d3748;
+    color: white;
+}
+
+/* ORDER FILTERS */
+.order-filters {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background: #151a25;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid #232a38;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    color: #8b9bb4;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-btn:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.filter-btn.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #64748b;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+/* ==========================================
+   SETTINGS
+   ========================================== */
+.settings-form {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #8b9bb4;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    background: #0b0e14;
+    border: 1px solid #2d3748;
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ==========================================
+   MODAL - CLEAN
+   ========================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.15rem;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #8b9bb4;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* ==========================================
+   DIAMOND EDITOR
+   ========================================== */
+.diamond-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.diamond-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    background: #0b0e14;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #2d3748;
+}
+
+.diamond-row input {
+    background: #151a25;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 8px 10px;
+    color: white;
+    font-size: 0.85rem;
+    outline: none;
+    width: 100%;
+}
+
+.diamond-row input:focus {
+    border-color: #3b82f6;
+}
+
+.diamond-row .hot-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #8b9bb4;
+    white-space: nowrap;
+}
+
+.diamond-row .hot-checkbox input {
+    width: auto;
+}
+
+.btn-remove-diamond {
+    width: 32px;
+    height: 32px;
+    background: #7f1d1d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 0.75rem;
+}
+
+.btn-remove-diamond:hover {
+    background: #dc2626;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 600px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .tabs {
+        flex-direction: column;
+    }
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+/* ==========================================
+   BUTTON TIMBUL + RIPPLE EFFECT (CLEAN)
+   ========================================== */
+
+/* BUTTON PRIMARY - TIMBUL 3D */
+.btn-primary {
+    background: #3b82f6;
+    box-shadow: 
+        0 4px 0 #1e40af,          /* Bawah gelap (efek timbul) */
+        0 6px 12px rgba(0, 0, 0, 0.3);  /* Shadow biasa */
+    transform: translateY(0);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 0 #1e40af,
+        0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 2px 0 #1e40af,
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* RIPPLE EFFECT untuk semua button */
+.btn-primary::before,
+.btn-secondary::before,
+.btn-view-site::before,
+.btn-order-action::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    pointer-events: none;
+}
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.btn-view-site:hover::before,
+.btn-order-action:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* BUTTON SECONDARY - TIMBUL 3D */
+.btn-secondary {
+    background: #1e293b;
+    box-shadow: 
+        0 3px 0 #0f172a,
+        0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary:hover {
+    background: #2d3748;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #0f172a,
+        0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 1px 0 #0f172a,
+        0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* BUTTON VIEW SITE - TIMBUL */
+.btn-view-site {
+    box-shadow: 
+        0 3px 0 #1e40af,
+        0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-view-site:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #1e40af,
+        0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-view-site:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 1px 0 #1e40af,
+        0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* BUTTON ORDER ACTION - TIMBUL */
+.btn-order-action {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 2px 0 rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+}
+
+.btn-complete:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 0 #14532d,
+        0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-error:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 0 #7f1d1d,
+        0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-delete-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 0 #0f172a,
+        0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   GAME CARD - LIFT UP
+   ========================================== */
+.game-item {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.game-item:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6;
+    background: #1a2030;
+    box-shadow: 
+        0 15px 30px -10px rgba(0, 0, 0, 0.5),
+        0 0 0 1px #3b82f6;
+}
+
+.game-item:active {
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   ICON BUTTONS - SCALE UP
+   ========================================== */
+.btn-icon {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 2px 0 rgba(0, 0, 0, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 5px 0 rgba(0, 0, 0, 0.4),
+        0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+        0 1px 0 rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* RIPPLE untuk icon button */
+.btn-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+    pointer-events: none;
+}
+
+.btn-icon:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+/* ==========================================
+   CAT TAG - LIFT & WAVE
+   ========================================== */
+.cat-tag {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cat-tag:hover {
+    transform: translateY(-2px);
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 
+        0 4px 0 #1e40af,
+        0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cat-tag:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 #1e40af;
+}
+
+/* ==========================================
+   TAB - RIPPLE EFFECT
+   ========================================== */
+.tab {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+    pointer-events: none;
+}
+
+.tab:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.tab.active::before {
+    display: none;
+}
+
+.tab:hover {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   FILTER BUTTON - LIFT
+   ========================================== */
+.filter-btn {
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-btn:active {
+    transform: translateY(1px);
+}
+
+.filter-btn.active {
+    box-shadow: 
+        0 3px 0 #1e40af,
+        0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 0 #1e40af,
+        0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   ORDER CARD - SUBTLE LIFT
+   ========================================== */
+.order-item {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-item:hover {
+    transform: translateY(-3px);
+    border-color: #2d3748;
+    box-shadow: 
+        0 10px 25px -8px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+/* ==========================================
+   MODAL - BACKDROP + SCALE
+   ========================================== */
+.modal-content {
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+/* ==========================================
+   BANNERS LIST
+   ========================================== */
+.banners-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.banner-item {
+    background: #151a25;
+    border: 1px solid #232a38;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.banner-item:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.banner-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    background: #0b0e14;
+}
+
+.banner-item-info {
+    padding: 14px;
+}
+
+.banner-item-info h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    word-break: break-word;
+}
+
+.banner-item-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.banner-item-actions button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
+}
+
+.btn-banner-delete {
+    background: #7f1d1d;
+    color: white;
+}
+
+.btn-banner-delete:hover {
+    background: #dc2626;
+}
