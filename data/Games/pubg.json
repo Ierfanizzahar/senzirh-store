@@ -1,0 +1,83 @@
+{
+  "id": "pubg",
+  "name": "PUBG Mobile",
+  "tag": "Battle Royale",
+  "img": "images/pubg.jpg",
+  "icon": "🔫",
+  "categories": [
+    {
+      "name": "PUBG Malaysia",
+      "icon": "🇲🇾",
+      "tag": "Malaysia",
+      "diamonds": [
+        {
+          "amount": 60,
+          "price": 3,
+          "hot": false
+        },
+        {
+          "amount": 325,
+          "price": 15,
+          "hot": true
+        },
+        {
+          "amount": 660,
+          "price": 30,
+          "hot": false
+        },
+        {
+          "amount": 1800,
+          "price": 80,
+          "hot": false
+        },
+        {
+          "amount": 3850,
+          "price": 160,
+          "hot": false
+        },
+        {
+          "amount": 8100,
+          "price": 320,
+          "hot": false
+        }
+      ]
+    },
+    {
+      "name": "PUBG Global",
+      "icon": "🌍",
+      "tag": "Global",
+      "diamonds": [
+        {
+          "amount": 60,
+          "price": 3.2,
+          "hot": false
+        },
+        {
+          "amount": 325,
+          "price": 16,
+          "hot": true
+        },
+        {
+          "amount": 660,
+          "price": 32,
+          "hot": false
+        },
+        {
+          "amount": 1800,
+          "price": 85,
+          "hot": false
+        },
+        {
+          "amount": 3850,
+          "price": 170,
+          "hot": false
+        },
+        {
+          "amount": 8100,
+          "price": 340,
+          "hot": false
+        }
+      ]
+    }
+  ]
+}

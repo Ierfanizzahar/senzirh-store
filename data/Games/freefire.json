@@ -1,0 +1,83 @@
+{
+  "id": "freefire",
+  "name": "Free Fire",
+  "tag": "Battle Royale",
+  "img": "images/freefire.jpg",
+  "icon": "🔥",
+  "categories": [
+    {
+      "name": "Free Fire Malaysia",
+      "icon": "🇲🇾",
+      "tag": "Malaysia",
+      "diamonds": [
+        {
+          "amount": 5,
+          "price": 1,
+          "hot": false
+        },
+        {
+          "amount": 12,
+          "price": 2.5,
+          "hot": true
+        },
+        {
+          "amount": 50,
+          "price": 10,
+          "hot": false
+        },
+        {
+          "amount": 70,
+          "price": 13,
+          "hot": false
+        },
+        {
+          "amount": 140,
+          "price": 25,
+          "hot": false
+        },
+        {
+          "amount": 355,
+          "price": 60,
+          "hot": false
+        }
+      ]
+    },
+    {
+      "name": "Free Fire Indonesia",
+      "icon": "🇮🇩",
+      "tag": "Indonesia",
+      "diamonds": [
+        {
+          "amount": 5,
+          "price": 1.2,
+          "hot": false
+        },
+        {
+          "amount": 12,
+          "price": 2.8,
+          "hot": true
+        },
+        {
+          "amount": 50,
+          "price": 11,
+          "hot": false
+        },
+        {
+          "amount": 70,
+          "price": 14.5,
+          "hot": false
+        },
+        {
+          "amount": 140,
+          "price": 28,
+          "hot": false
+        },
+        {
+          "amount": 355,
+          "price": 66,
+          "hot": false
+        }
+      ]
+    }
+  ]
+}

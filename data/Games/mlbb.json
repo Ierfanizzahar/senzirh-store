@@ -1,0 +1,150 @@
+{
+  "id": "mlbb",
+  "name": "Mobile Legends",
+  "tag": "MOBA 5v5",
+  "img": "images/mlbb.jpg",
+  "icon": "💎",
+  "categories": [
+    {
+      "name": "MLBB Malaysia",
+      "icon": "🇲🇾",
+      "tag": "Server Malaysia",
+      "diamonds": [
+        {
+          "amount": 14,
+          "price": 1,
+          "hot": false
+        },
+        {
+          "amount": 42,
+          "price": 3,
+          "hot": false
+        },
+        {
+          "amount": 70,
+          "price": 5,
+          "hot": false
+        },
+        {
+          "amount": 140,
+          "price": 10,
+          "hot": true
+        },
+        {
+          "amount": 284,
+          "price": 20,
+          "hot": true
+        },
+        {
+          "amount": 355,
+          "price": 25,
+          "hot": false
+        },
+        {
+          "amount": 429,
+          "price": 30,
+          "hot": false
+        },
+        {
+          "amount": 716,
+          "price": 50,
+          "hot": false
+        },
+        {
+          "amount": 1446,
+          "price": 100,
+          "hot": false
+        },
+        {
+          "amount": 2976,
+          "price": 200,
+          "hot": false
+        },
+        {
+          "amount": 7502,
+          "price": 500,
+          "hot": false
+        },
+        {
+          "amount": "Weekly",
+          "price": 8,
+          "hot": false
+        }
+      ]
+    },
+    {
+      "name": "MLBB Indonesia",
+      "icon": "🇮🇩",
+      "tag": "Server Indonesia",
+      "diamonds": [
+        {
+          "amount": 5,
+          "price": 1.8,
+          "hot": false
+        },
+        {
+          "amount": 12,
+          "price": 4,
+          "hot": true
+        },
+        {
+          "amount": 19,
+          "price": 6,
+          "hot": false
+        },
+        {
+          "amount": 36,
+          "price": 11.5,
+          "hot": false
+        },
+        {
+          "amount": 74,
+          "price": 23,
+          "hot": false
+        },
+        {
+          "amount": 172,
+          "price": 52,
+          "hot": false
+        }
+      ]
+    },
+    {
+      "name": "MLBB Global",
+      "icon": "🌍",
+      "tag": "Server Global",
+      "diamonds": [
+        {
+          "amount": 5,
+          "price": 1.7,
+          "hot": false
+        },
+        {
+          "amount": 12,
+          "price": 3.8,
+          "hot": true
+        },
+        {
+          "amount": 19,
+          "price": 5.8,
+          "hot": false
+        },
+        {
+          "amount": 36,
+          "price": 11,
+          "hot": false
+        },
+        {
+          "amount": 74,
+          "price": 22,
+          "hot": false
+        },
+        {
+          "amount": 172,
+          "price": 50,
+          "hot": false
+        }
+      ]
+    }
+  ]
+}

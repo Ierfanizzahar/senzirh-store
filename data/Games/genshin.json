@@ -1,0 +1,46 @@
+{
+  "id": "genshin",
+  "name": "Genshin Impact",
+  "tag": "Open World RPG",
+  "img": "images/genshin.jpg",
+  "icon": "⚔️",
+  "categories": [
+    {
+      "name": "Genshin Asia",
+      "icon": "🌏",
+      "tag": "Asia Server",
+      "diamonds": [
+        {
+          "amount": 60,
+          "price": 5,
+          "hot": false
+        },
+        {
+          "amount": 300,
+          "price": 25,
+          "hot": true
+        },
+        {
+          "amount": 980,
+          "price": 80,
+          "hot": false
+        },
+        {
+          "amount": 1980,
+          "price": 160,
+          "hot": false
+        },
+        {
+          "amount": 3280,
+          "price": 260,
+          "hot": false
+        },
+        {
+          "amount": 6480,
+          "price": 500,
+          "hot": false
+        }
+      ]
+    }
+  ]
+}

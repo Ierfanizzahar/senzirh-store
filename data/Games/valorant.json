@@ -1,0 +1,46 @@
+{
+  "id": "valorant",
+  "name": "Valorant",
+  "tag": "FPS Tactical",
+  "img": "images/valorant.jpg",
+  "icon": "🎯",
+  "categories": [
+    {
+      "name": "Valorant Points",
+      "icon": "🌍",
+      "tag": "Global",
+      "diamonds": [
+        {
+          "amount": 125,
+          "price": 5,
+          "hot": false
+        },
+        {
+          "amount": 420,
+          "price": 16,
+          "hot": true
+        },
+        {
+          "amount": 700,
+          "price": 26,
+          "hot": false
+        },
+        {
+          "amount": 1375,
+          "price": 50,
+          "hot": false
+        },
+        {
+          "amount": 2400,
+          "price": 85,
+          "hot": false
+        },
+        {
+          "amount": 4000,
+          "price": 140,
+          "hot": false
+        }
+      ]
+    }
+  ]
+}
